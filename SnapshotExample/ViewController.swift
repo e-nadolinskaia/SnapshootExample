@@ -9,9 +9,19 @@ import UIKit
 
 class ViewController: UIViewController {
 
+   
+    @IBOutlet weak var helloLabel: UILabel!
+    var isDarkMode = false {
+        didSet {
+            view.backgroundColor = isDarkMode ? .black : .white
+            helloLabel.textColor = isDarkMode ? .white : .black
+            
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        isDarkMode = false
     }
 
 
